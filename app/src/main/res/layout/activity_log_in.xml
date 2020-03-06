@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="20dp">
+
+    <TextView
+        android:id="@+id/tvEmailEtiquetaLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="Email:"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etEmailLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvEmailEtiquetaLogin"
+        android:hint="Introduce tu correo"
+        android:inputType="textEmailAddress" />
+
+    <TextView
+        android:id="@+id/tvContraEtiquetaLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etEmailLogin"
+        android:text="Contraseña:"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etContraLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvContraEtiquetaLogin"
+        android:hint="Introduzca su contraseña"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/btnEnviarLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Enviar"
+        android:textStyle="bold" />
+
+</RelativeLayout>

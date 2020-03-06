@@ -68,7 +68,7 @@ public class dbQuePasaAux {
         ArrayList<Missatge> missatges = new ArrayList<>();
         SQLiteDatabase query = db.getWritableDatabase();
         String select = "SELECT * FROM " + dbQuePasa.TAB_MSG + " WHERE " +
-                dbQuePasa.COL_MSG_ID + " > " + idUltimoMsg;
+                dbQuePasa.COL_MSG_ID + " > " + idUltimoMsg;// + " order by "+dbQuePasa.COL_MSG_DATE+" DESC";
         Cursor cursor = query.rawQuery(select, null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){

@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 public class Preferencies {
     private static final String NOM_PREFERENCIES = "PreferenciesQuepassaEh";
     private final static String CLAU_CODIUSUARI = "id";
-    private final static String CLAU_USER = "user";
+    private final static String CLAU_USER = "email";
     private final static String CLAU_PASSWD = "passwd";
     private final static String TOKEN = "token";
     private String codiusuari;

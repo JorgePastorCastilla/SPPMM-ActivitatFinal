@@ -30,28 +30,23 @@ public class Auxiliar {
         try {
             // Agafam la URL que s'ha passat com argument
             if(login){
-                url = new
-                        URL("http://52.44.95.114/quepassaeh/server/public/login/");
+                url = new URL("http://52.44.95.114/quepassaeh/server/public/login/");
             } else{
-                url = new
-                        URL("http://52.44.95.114/quepassaeh/server/public/provamissatge/");
+                url = new URL("http://52.44.95.114/quepassaeh/server/public/provamissatge/");
             }
             // Feim la connexió a la URL
-            HttpURLConnection httpURLConnection = (HttpURLConnection)
-                    url.openConnection();
+            HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
             httpURLConnection.setReadTimeout(15000);
             httpURLConnection.setChunkedStreamingMode(25000);
             httpURLConnection.setRequestMethod("POST");
             httpURLConnection.setDoInput(true);
             httpURLConnection.setDoOutput(true);
             OutputStream out = httpURLConnection.getOutputStream();
-            BufferedWriter writer = new BufferedWriter(new
-                    OutputStreamWriter(out, Charset.forName("UTF-8")));
+            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(out, Charset.forName("UTF-8")));
             if(login){
                 writer.write("email=" + arg1 + "&password=" + arg2);
             }else{
-                writer.write("msg=" + arg1 + "&codiusuari=" +
-                        Integer.parseInt(arg2));
+                writer.write("msg=" + arg1 + "&codiusuari=" + Integer.parseInt(arg2));
             }
             writer.flush();
             writer.close();
@@ -80,11 +75,9 @@ public class Auxiliar {
         try {
             // Agafam la URL que s'ha passat com argument
             if (!codi) {
-                url = new
-                        URL("http://52.44.95.114/quepassaeh/server/public/provamissatge/");
+                url = new URL("http://52.44.95.114/quepassaeh/server/public/provamissatge/");
             } else {
-                url = new
-                        URL("http://52.44.95.114/quepassaeh/server/public/provamissatge/" + idUser);
+                url = new URL("http://52.44.95.114/quepassaeh/server/public/provamissatge/");// + idUser);
             }
             // Feim la connexió a la URL
             HttpURLConnection httpURLConnection = (HttpURLConnection)
@@ -111,8 +104,7 @@ public class Auxiliar {
         }
         return text.toString();
     }
-    public static void processarMissatges(ListView lv, Context context,
-                                          String idUser, String result){
+    public static void processarMissatges(ListView lv, Context context,String idUser, String result){
         // Quan ha acabat la tasca, Agafam string que es un JSON
         Log.w("TEXTE", result);
         try {
@@ -130,12 +122,10 @@ public class Auxiliar {
             e.printStackTrace();
         }
     }
-    public static void mostraMissatges(ListView lv, Context context, int
-            ultimoMensaje, String idUser){
-        ArrayList<Missatge> mensajes =
-                dbQuePasaAux.listarMensajes(ultimoMensaje);
-        AdapterQuePasa adapter = new AdapterQuePasa(context,
-                R.layout.mensaje_izquierda, mensajes, idUser);
+    public static void mostraMissatges(ListView lv, Context context, int ultimoMensaje, String idUser){
+        ArrayList<Missatge> mensajes = dbQuePasaAux.listarMensajes(ultimoMensaje);
+        AdapterQuePasa adapter = new AdapterQuePasa(context, R.layout.mensaje_izquierda, mensajes, idUser);
         lv.setAdapter(adapter);
     }
 }
+
